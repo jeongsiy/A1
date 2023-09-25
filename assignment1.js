@@ -69,4 +69,3 @@ let getPatient = function (patients) {
 };
 
 console.log(getPatient());
-
