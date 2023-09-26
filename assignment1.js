@@ -25,47 +25,29 @@ let hospital = [
     },
 ];
 
-function showPatients(hospital) {
-    let output = `<h1>hospital.Name</h1>`;
-    
-    hospital.patients.forEach(patient => {
-      output += `<h2>patient.fullName, patient.dateOfBirth</h2>`;
-      output += "<ul>";
-      patient.symptoms.forEach(symptom => {
-        output += `<li>symptom</li>`;
-      });
-      output += "</ul>";
-    });
-    
-    return output;
+function showPatients(){
+  let str = "<h1>hospital.Name</h1>";
+
+  for (let i = 0; i < hospital.length; i++){
+    str += "<h2>" + hospital[i].fullName + ", " + hospital[i].dateOfBirth + "</h2>";
+    str += "<ul>"
+    for (let j = 0; j < hospital[i].symtoms.length; j++){
+      str += "<li>" + hospital[i].symtoms[j] + "</li>";
+    }
+
+    str += "</ul>";
   }
-   
-  showPatients = function () {
-    let str = "<h1>hospital.Name</h1>";
-   
-    for (let i = 0; i < hospital.length; i++) {
-      str += "<h2>" + hospital[i].fullName + ", " + hospital[i].dateOfBirth + "</h2>";
-      str += "<ul>";
-        str += "<li>" + hospital[i].symptoms + "</li>";
-        str += "</ul>";
-      }
-    return str;
+
+  return str;
 };
 
-console.log(showPatients(hospital));
+console.log(showPatients());
 
 
+function getPatient(randomPatientIndex){
+  return hospital[randomPatientIndex].id
+}
 
-let getPatient = function (patients) {
+const randomPatientIndex = Math.floor(Math.random()*hospital.length);
 
-    let randomIndex = function() {
-        const randomIndex = Math.floor(Math.random()*patients.length);
-        return randomIndex
-    };
-
-    let randomPateintId = randomIndex();
-    return randomPateintId;
-
-};
-
-console.log(getPatient());
+console.log(getPatient(randomPatientIndex));
