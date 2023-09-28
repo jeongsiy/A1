@@ -31,8 +31,8 @@ function showPatients(){
   for (let i = 0; i < hospital.length; i++){
     str += "<h2>" + hospital[i].fullName + ", " + hospital[i].dateOfBirth + "</h2>";
     str += "<ul>";
-    for (let j = 0; j < hospital[i].symtoms.length; j++){
-      str += "<li>" + hospital[i].symtoms[j] + "</li>";
+    for (let j = 0; j < hospital[j].symtoms.length; j++){
+      str += "<li>" + hospital[j].symtoms[j] + "</li>";
     }
 
     str += "</ul>";
